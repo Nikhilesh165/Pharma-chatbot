@@ -1,15 +1,21 @@
-# HPL Pharmaceutical Knowledge Assistant
+# Pharmaceutical Knowledge Assistant
 
-A RAG-based pharmaceutical knowledge assistant specifically designed for HPL pharmaceutical products. This assistant helps users understand medication details, find information about drug interactions, dosages, and more.
+A RAG-based pharmaceutical knowledge assistant specifically designed for pharmaceutical products. This assistant helps users understand medication details, find information about drug interactions, dosages, and more.
 
 ## Features
 
-- Question Answering about HPL pharmaceutical products
+- Question Answering about pharmaceutical products
 - Detailed prescribing information retrieval
 - Section-specific information search (dosage, side effects, etc.)
 - PDF-based information extraction
 - Command-line interface for easy interaction
-
+- **Advanced Retrieval-Augmented Generation (RAG)**:
+  - Enhanced query analysis to understand user intent and extract key information.
+  - Multi-query retrieval for generating alternative queries to improve information retrieval.
+  - Document reranking based on relevance to user queries using advanced scoring techniques.
+  - Structured answer synthesis that provides clear, well-reasoned responses with confidence scores and medical disclaimers.
+- **Streamlit Interface**:
+  - A user-friendly web interface for interacting with the chatbot, allowing users to ask questions and receive answers in real-time.
 ## Project Structure
 
 ```
@@ -44,9 +50,10 @@ preprocessor = HPLDataPreprocessor(
 preprocessor.process_all_products()
 ```
 
-3. Start the CLI interface:
+3. Start the Streamlit interface:
 ```bash
-python src/cli.py
+streamlit run app.py
+```
 ```
 
 ## Usage
@@ -70,13 +77,17 @@ The assistant can answer questions about HPL pharmaceutical products such as:
    - Chunked text storage for better retrieval
 
 3. RAG System
-   - LangChain for document processing
-   - Ollama integration for language model
-   - Context-aware response generation
+   - Implements advanced query analysis for understanding user intent.
+   - Supports multi-query retrieval to generate alternative queries.
+   - Reranks documents based on relevance using sophisticated scoring techniques.
+   - Synthesizes structured answers with confidence scores and medical disclaimers.
+
+4. Streamlit Interface
+   - Provides a user-friendly web interface for real-time interaction with the chatbot.
 
 ## Notes
 
-- This system is specifically designed for HPL pharmaceutical products
+- This system is specifically designed for pharmaceutical products
 - Information is sourced from official prescribing information PDFs
 - The system maintains source attribution for all information
 - Responses are generated based on retrieved context only
