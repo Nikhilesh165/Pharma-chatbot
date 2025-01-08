@@ -1,20 +1,24 @@
-Pharmaceutical Knowledge Assistant
+# Pharmaceutical Knowledge Assistant
+
 A RAG-based pharmaceutical knowledge assistant specifically designed for pharmaceutical products. This assistant helps users understand medication details, find information about drug interactions, dosages, and more.
 
-Features
-Question Answering about pharmaceutical products
-Detailed prescribing information retrieval
-Section-specific information search (dosage, side effects, etc.)
-PDF-based information extraction
-Command-line interface for easy interaction
-Advanced Retrieval-Augmented Generation (RAG):
-Enhanced query analysis to understand user intent and extract key information.
-Multi-query retrieval for generating alternative queries to improve information retrieval.
-Document reranking based on relevance to user queries using advanced scoring techniques.
-Structured answer synthesis that provides clear, well-reasoned responses with confidence scores and medical disclaimers.
-Streamlit Interface:
-A user-friendly web interface for interacting with the chatbot, allowing users to ask questions and receive answers in real-time.
-Project Structure
+## Features
+
+- Question Answering about pharmaceutical products
+- Detailed prescribing information retrieval
+- Section-specific information search (dosage, side effects, etc.)
+- PDF-based information extraction
+- Command-line interface for easy interaction
+- **Advanced Retrieval-Augmented Generation (RAG)**:
+  - Enhanced query analysis to understand user intent and extract key information.
+  - Multi-query retrieval for generating alternative queries to improve information retrieval.
+  - Document reranking based on relevance to user queries using advanced scoring techniques.
+  - Structured answer synthesis that provides clear, well-reasoned responses with confidence scores and medical disclaimers.
+- **Streamlit Interface**:
+  - A user-friendly web interface for interacting with the chatbot, allowing users to ask questions and receive answers in real-time.
+## Project Structure
+
+```
 .
 ├── datasets/               # JSON datasets
 │   ├── raw/               # Raw scraped data
@@ -26,10 +30,17 @@ Project Structure
 │   └── cli.py            # Command-line interface
 ├── requirements.txt       # Project dependencies
 └── README.md             # Project documentation
-Setup
-Install dependencies:
+```
+
+## Setup
+
+1. Install dependencies:
+```bash
 pip install -r requirements.txt
-Process the raw data:
+```
+
+2. Process the raw data:
+```python
 from src.data_loader.preprocessor import HPLDataPreprocessor
 
 preprocessor = HPLDataPreprocessor(
@@ -37,8 +48,13 @@ preprocessor = HPLDataPreprocessor(
     output_dir="datasets/processed"
 )
 preprocessor.process_all_products()
-Start the Streamlit interface:
+```
+
+3. Start the Streamlit interface:
+```bash
 streamlit run app.py
+```
+```
 
 ## Usage
 
